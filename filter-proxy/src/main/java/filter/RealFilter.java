@@ -18,11 +18,10 @@ public class RealFilter extends GenericFilterBean {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		Cookie cookie = new Cookie("RealFilter", "Works");
-		cookie.setPath(((HttpServletRequest)request).getContextPath());
+		cookie.setPath(((HttpServletRequest) request).getContextPath());
 		cookie.setMaxAge(60);
-		
 		((HttpServletResponse)response).addCookie(cookie);
-		
+
 		chain.doFilter(request, response);
 	}
 }
