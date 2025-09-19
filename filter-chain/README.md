@@ -18,15 +18,15 @@
 4. Spring Security 설정은 FilterChainProxy Bean과 내부의 SecurityFilterChain(DefaultSecurityFilterChain)에 대한 설정을 의미한다.
 
 #### 예제01: FilterChainProxy Bean 설정: 인터페이스 SecurityFilterChain 직접 구현
-1. Filter Chain 0: "/01/**"     -> [SecurityFilterEx01, SecurityFilterEx02]
-2. Filter Chain 1: "/02/**"     -> [SecurityFilterEx03, SecurityFilterEx04]
+1. Filter Chain 0: "/hello/**"     -> [SecurityFilterEx01, SecurityFilterEx02]
+2. Filter Chain 1: "/ping/**"     -> [SecurityFilterEx03, SecurityFilterEx04]
 3. 설정: config.app.SecurityConfigEx01
 4. 테스트: config.app.SecurityConfigEx01Test
 
 
 #### 예제02: FilterChainProxy Bean 설정: DefaultSecurityFilterChain 사용
-1. Filter Chain 0: "/01/**"     -> [SecurityFilterEx01, SecurityFilterEx02]
-2. Filter Chain 1: "/02/**"     -> [SecurityFilterEx03, SecurityFilterEx04]
+1. Filter Chain 0: "/hello/**"     -> [SecurityFilterEx01, SecurityFilterEx02]
+2. Filter Chain 1: "/ping/**"     -> [SecurityFilterEx03, SecurityFilterEx04]
 3. 설정: config.app.SecurityConfigEx01
 4. 테스트: config.app.SecurityConfigEx02Test
 

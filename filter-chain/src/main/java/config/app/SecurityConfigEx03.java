@@ -19,12 +19,13 @@ public class SecurityConfigEx03 {
 	@Bean
 	public FilterChainProxy springSecurityFilterChain() {
 		List<SecurityFilterChain> securityFileterChains = Arrays.asList(
-				// spring security 제공 DefaultSecurityFilterChain <- SecurityFilterChain 구현체
+				// spring security의 DefaultSecurityFilterChain
+				// SecurityFilterChain 인터페이스의 구현체
 				new DefaultSecurityFilterChain(
 						// /assets은 보안 필터 없음
 						new AntPathRequestMatcher("/assets/**")),
 				new DefaultSecurityFilterChain(
-						// 모든 나머지 요청에는 custom filter 등록
+						// 나머지 모든 요청에는 "spring" security filter 등록
 						new AntPathRequestMatcher("/**"), disableEncodeUrlFilter(), webAsyncManagerIntegrationFilter(), defaultLoginPageGeneratingFilter()));
 
 		return new FilterChainProxy(securityFileterChains);

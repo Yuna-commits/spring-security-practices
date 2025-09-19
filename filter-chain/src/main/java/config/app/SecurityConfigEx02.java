@@ -21,7 +21,8 @@ public class SecurityConfigEx02 {
 	@Bean
 	public FilterChainProxy springSecurityFilterChain() {
 		List<SecurityFilterChain> securityFileterChains = Arrays.asList(
-				// spring security 제공 DefaultSecurityFilterChain
+				// spring security의 DefaultSecurityFilterChain
+				// SecurityFilterChain 인터페이스의 구현체
 				new DefaultSecurityFilterChain(
 						new AntPathRequestMatcher("/hello/**"), securityFilterEx01(), securityFilterEx02()),
 				new DefaultSecurityFilterChain(
