@@ -7,7 +7,7 @@
 
 2. @EnableWebSecurity 사용
 
-3. WebSecuriy와 HttpSecurity를 사용한 FilterChainProxy Bean 생성
+3. WebSecurity와 HttpSecurity를 사용한 FilterChainProxy Bean 생성
 
 4. 1 또는 2개의 SecurityFilterChain이 생성된다.
 
