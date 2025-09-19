@@ -26,6 +26,10 @@ public class SecurityConfigEx02 {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.build();
+       http
+       		.formLogin(configurer -> {})
+       		.httpBasic(configurer -> {});
+    	
+    	return http.build();
     }
 }
